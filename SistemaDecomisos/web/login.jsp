@@ -15,6 +15,9 @@
 		<link rel="stylesheet" href="css/login.css">
 		<script src='js/jquery.min.js'></script>
 		<script src="js/login.js"></script>
+                <script src="js/Proxy.js"></script>
+                <script src="js/BaseDatos.js"></script>
+                <script src="js/objects/Usuario.js"></script>
 	</head>
 	<body>
 		<div class="login-form">
@@ -27,7 +30,7 @@
 		   <i class="fa fa-user"></i>
 		 </div>
 		 <div class="form-group log-status">
-		   <input type="password" class="form-control" placeholder="Contraseña" id="Passwod">
+		   <input type="password" class="form-control" placeholder="Contraseña" id="Password">
 		   <i class="fa fa-lock"></i>
 		 </div>
 		  <span class="alert">¡Datos Erróneos! </br>Si ha olvidado la contraseña, contacte con el administrador.</span>
