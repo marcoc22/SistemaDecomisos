@@ -13,25 +13,17 @@ import java.io.Serializable;
  */
 public class Usuario implements Serializable, Jsonable{
     
-    String id;
+
     String nick;
     String contrasena;
     
     public Usuario() {
     }
 
-    public Usuario(String id, String nick, String contrasena) {
-        this.id = id;
+    public Usuario(String nick, String contrasena) {
+        
         this.nick = nick;
         this.contrasena = contrasena;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getNick() {
