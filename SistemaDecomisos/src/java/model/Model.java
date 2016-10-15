@@ -34,7 +34,7 @@ public class Model {
             PreparedStatement pstmt = null;
             ResultSet rs = null;
             if (con != null) {
-                String sql = "select 1 from UsuarioM ";
+                String sql = "select 1 from UsuarioM where UsuarioM.IdUser='"+nick+"' and UsuarioM.contrasena='"+pass+"'";
                 pstmt = con.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 if (rs.next()) {

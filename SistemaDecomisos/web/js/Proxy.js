@@ -9,7 +9,22 @@ Proxy.userLogin = function (criterio) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         success: function (data) {
-            //data: user returned from Servlet
+            if (data != null) {
+                window.location.href = "home.jsp";
+            }else{
+                errorLogin();
+            }
+        }
+    });
+};
+Proxy.userLogout = function (criterio) {
+
+    $.ajax({
+        url: "/SistemaDecomisos/Servlet?action=userLogout",
+        type: "POST",
+        contentType: "application/x-www-form-urlencoded",
+        success: function (data) {
+                window.location.href = "login.jsp";
         }
     });
 };
