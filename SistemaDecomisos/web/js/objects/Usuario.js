@@ -1,30 +1,29 @@
-function Usuario(id, nick, contrasena) {
-    this.Usuario(id, nick, contrasena);
+function Usuario(nick, contrasena) {
+    this.Usuario(nick, contrasena);
 }
 
 Usuario.prototype = {
-    id: "",
+    
     nick: "",
     contrasena: "",
-    Usuario: function (id, nick, contrasena) {
-        this.id = id;
+    Usuario: function (nick, contrasena) {
+      
         this.nick = nick;
         this.contrasena = contrasena;
     },
     toString: function () {
-        return this.id;
+        return this.nick;
     }
 };
 
 Usuario.from = function (plain) {
-    usuario = new Usuario(plain.id, plain.nick, plain.contrasena);
+    usuario = new Usuario(plain.nick, plain.contrasena);
     return usuario;
 };
 
 Usuario.to = function (usuario) {
     return {
         _class: 'Usuario',
-        id: usuario.id,
         nick: usuario.nick,
         contrasena: usuario.contrasena
     };
