@@ -9,7 +9,9 @@
 body {
   /* background: #FF9000; */
   background: #63a1be;
+  line-height: 1.471;
 }
+
 
 h1 {
   color: #63a1be;
@@ -19,12 +21,18 @@ h1 {
 }
 
 .logo img{
-	max-width:100%;
-	max-height:100%;
-	position: relative;
-	padding: 6px 8px 6px 16px;
+    max-width:100%;
+    max-height:100%;
+    position: relative;
+    padding: 6px 8px 6px 16px;
+}
+
+.login_content form {
+  margin: 20px 0;
+  position: relative; 
 }
 .login-form {
+  min-width: 350px;
   width: 350px;
   padding: 40px 30px;
   background: #eee;
@@ -84,7 +92,7 @@ h1 {
 
 .log-btn {
   background: #0AC986;
-  dispaly: inline-block;
+  display: inline-block;
   width: 100%;
   font-size: 16px;
   height: 50px;
@@ -113,6 +121,10 @@ h1 {
   font-size: 12px;
   color: #f00;
   float: left;
+}
+.login_wrapper {
+  right: 0px;
+  max-width: 350px;
 }
 
 @-moz-keyframes wrong-log {
@@ -148,3 +160,4 @@ h1 {
     left: -15px;
   }
 }
+
