@@ -17,34 +17,29 @@ import java.sql.SQLException;
  */
 public class Model {
 
-    private Pool conexion;
+    
 
     public Model() {
-        try {
-            conexion = new Pool();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+       
     }
 
-    public Connection getConexion() throws SQLException {
-        return conexion.dataSource.getConnection();
-    }
+    
 
     //------------USUARIO----------------
     public Usuario login(String nick, String pass) {
         Connection con = null;
         Usuario user = null;
         try {
-            con = getConexion();
+            con = Pool.getConnection();
             PreparedStatement pstmt = null;
             ResultSet rs = null;
             if (con != null) {
-                String sql = "exec prclogin()";
+                String sql = "select 1 from UsuarioM ";
                 pstmt = con.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 if (rs.next()) {
-                    //cargar datos del user
+                    user=new Usuario();
+                    user.setNick(nick);
                 }
             }
 

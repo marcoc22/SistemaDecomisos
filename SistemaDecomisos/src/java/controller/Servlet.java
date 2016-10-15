@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Jsonable;
+import model.Model;
 import model.Usuario;
 
 /**
@@ -44,12 +45,14 @@ public class Servlet extends HttpServlet {
             Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
             String json;
             String accion = request.getParameter("action");
-
+            Model model = (Model) request.getSession().getAttribute("model");
             switch (accion) {
                 case "userLogin":
+                    if(model==null)
+                        model=new Model();
                     json = request.getParameter("user");// se obtiene un json del cliente, proviene de un objeto Usuario
                     Usuario usuario = gson.fromJson(json, Usuario.class);
-                    //usuario = model.userLogin(user);
+                    usuario = model.login(usuario.getNick(),usuario.getContrasena());
                     if (usuario != null) {
                         //Funcionario funcionario=model.obtenerFuncionario(String id);
                         request.getSession().setAttribute("usuario", usuario);// El objeto Usuario es enviado a la sesión
