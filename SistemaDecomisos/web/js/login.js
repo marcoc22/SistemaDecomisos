@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
   $(document).ready(function(){
 //        $('.log-btn').click(function(){
 //            $('.log-status').addClass('wrong-entry');
@@ -13,6 +14,8 @@
         });
     });
 =======
+=======
+>>>>>>> origin/Marco
 $(document).ready(function () {
     $('.log-btn').click(function () {
         var nick = $("#UserName").val();
@@ -33,5 +36,9 @@ $(document).ready(function () {
 
 });
 
+<<<<<<< HEAD
     
 >>>>>>> Conexion de cliente a servidor lista
+=======
+    
+>>>>>>> origin/Marco
