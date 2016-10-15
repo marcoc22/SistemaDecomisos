@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html >
-<<<<<<< HEAD
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="css/login.css">
         <script src='js/jquery.min.js'></script>
         <script src="js/login.js"></script>
+        <script src="js/Proxy.js"></script>
+        <script src="js/BaseDatos.js"></script>
+        <script src="js/objects/Usuario.js"></script>
     </head>
     <body>
         <div class="login_wrapper">
@@ -26,52 +29,23 @@
                     <form action="home.jsp" method="GET">
                         <h1>Sistema de Gestión de Decomisos</h1>
                         <div class="logo ">
-                           <img src="media/images/logo.png" alt="logo">
+                            <img src="media/images/logo.png" alt="logo">
                         </div>
                         <div class="form-group ">
                             <input type="text" name="username" class="form-control" placeholder="Usuario" id="UserName">
-                          <i class="fa fa-user"></i>
+                            <i class="fa fa-user"></i>
                         </div>
                         <div class="form-group log-status">
                             <input type="password" name="password" class="form-control" placeholder="Contraseña" id="PassWord">
-                          <i class="fa fa-lock"></i>
+                            <i class="fa fa-lock"></i>
                         </div>
-                         <span class="alert">¡Datos Erróneos! <br/>Si ha olvidado la contraseña, contacte con el administrador.</span>
-                         <button type="button" class="log-btn" id="login">Iniciar Sesión</button> 
+                        <span class="alert">¡Datos Erróneos! <br/>Si ha olvidado la contraseña, contacte con el administrador.</span>
+                        <button type="button" class="log-btn" id="login">Iniciar Sesión</button> 
                     </form>
                 </section>
             </div>
         </div>
     </body>
-=======
-	<head>
-		<meta charset="UTF-8">
-		<title>Inicio de Sesión</title>
-		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-		<link rel="stylesheet" href="css/login.css">
-		<script src='js/jquery.min.js'></script>
-		<script src="js/login.js"></script>
-                <script src="js/Proxy.js"></script>
-                <script src="js/BaseDatos.js"></script>
-                <script src="js/objects/Usuario.js"></script>
-	</head>
-	<body>
-		<div class="login-form">
-		 <h1>Sistema de Gestión de Decomisos</h1>
-		 <div class="logo">
-			<img src="media/images/logo.png" alt="logo">
-		 </div>
-		 <div class="form-group ">
-		   <input type="text" class="form-control" placeholder="Usuario" id="UserName">
-		   <i class="fa fa-user"></i>
-		 </div>
-		 <div class="form-group log-status">
-		   <input type="password" class="form-control" placeholder="Contraseña" id="Password">
-		   <i class="fa fa-lock"></i>
-		 </div>
-		  <span class="alert">¡Datos Erróneos! </br>Si ha olvidado la contraseña, contacte con el administrador.</span>
-		 <button type="button" class="log-btn" >Iniciar Sesión</button>
-		</div>
-	</body>
->>>>>>> Conexion de cliente a servidor lista
+    
+    
 </html>

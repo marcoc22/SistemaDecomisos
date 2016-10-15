@@ -63,7 +63,7 @@ public class Servlet extends HttpServlet {
                     break;
                 case "userLogout":
                     request.getSession().removeAttribute("usuario");
-                    request.getSession().removeAttribute("funcionario");
+                    request.getSession().removeAttribute("model");
                     request.getSession().invalidate();
                     break;
 
