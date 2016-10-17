@@ -5,35 +5,23 @@
             <url>src/java/model/Model.java</url>
             <bookmark id="1">
                 <name/>
-                <line>34</line>
+                <line>33</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <file>file:/C:/Users/Byron/Documents/NetBeansProjects/SistemaDecomisos/SistemaDecomisos/web/login.jsp</file>
-            <file>file:/C:/Users/Byron/Documents/NetBeansProjects/SistemaDecomisos/SistemaDecomisos/web/css/login.css</file>
-=======
-=======
->>>>>>> origin/Marco
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/scss/login.scss</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/database/Pool.java</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/model/Model.java</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/controller/Servlet.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/BaseDatos.js</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/login.js</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/Proxy.js</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/database/Pool.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/model/Usuario.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/model/Jsonable.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/home.jsp</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/home.js</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/login.jsp</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/objects/Usuario.js</file>
-<<<<<<< HEAD
->>>>>>> Database connection ok!
-=======
->>>>>>> origin/Marco
+            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/custom.js</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/security/SecurityFilter.java</file>
         </group>
     </open-files>
 </project-private>
