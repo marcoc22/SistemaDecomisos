@@ -76,9 +76,11 @@ public class SecurityFilter implements Filter {
         }
     }
 
+    @Override
     public void destroy() {
     }
 
+    @Override
     public void init(FilterConfig filterConfig) {
     }
 
