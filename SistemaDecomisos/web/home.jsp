@@ -43,11 +43,11 @@
                         <!-- menu profile quick info -->
                         <div class="profile">
                             <div class="profile_pic">
-                                <img src="media/images/pf.jpg" alt="..." class="img-circle profile_img">
+                                <img src="media/images/user.png" alt="..." class="img-circle profile_img">
                             </div>
                             <div class="profile_info">
                                 <span>Bienvenido,</span>
-                                <h2>Pecho frío</h2>
+                                <h2>User</h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -95,11 +95,11 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="media/images/pf.jpg" alt="">Pecho Frío
+                                        <img src="media/images/user.png" alt="">User
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                        <li><a><i class="fa fa-sign-out pull-right" id="logout"></i> Cerrar Sesión</a></li>
+                                        <li><a id="logout"><i class="fa fa-sign-out pull-right" ></i> Cerrar Sesión</a></li>
                                     </ul>
                                 </li>
                             </ul>
