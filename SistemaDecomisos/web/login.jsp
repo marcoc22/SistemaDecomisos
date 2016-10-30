@@ -17,10 +17,13 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/login.css">
         <script src='js/jquery.min.js'></script>
+        <script src="js/Utils.js"></script>
         <script src="js/login.js"></script>
         <script src="js/Proxy.js"></script>
         <script src="js/BaseDatos.js"></script>
         <script src="js/objects/Usuario.js"></script>
+        <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
+        
     </head>
     <body>
         <div class="login_wrapper">
@@ -31,16 +34,17 @@
                         <div class="logo ">
                             <img src="media/images/logo.png" alt="logo">
                         </div>
-                        <div class="form-group ">
-                            <input type="text" name="username" class="form-control" placeholder="Usuario" id="UserName">
+                        <div class="form-group log-status">
+                            <input type="text" name="username" class="form-control" placeholder="Usuario" id="UserName" onkeyup="actionKey(event);">
                             <i class="fa fa-user"></i>
                         </div>
                         <div class="form-group log-status">
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" id="PassWord">
+                            <input type="password" name="password" class="form-control" placeholder="Contraseña" id="PassWord" onkeyup="actionKey(event);">
                             <i class="fa fa-lock"></i>
                         </div>
                         <span class="alert">¡Datos Erróneos! <br/>Si ha olvidado la contraseña, contacte con el administrador.</span>
-                        <button type="button" class="log-btn" id="login">Iniciar Sesión</button> 
+                        <button class="log-btn" id="login">Iniciar Sesión </button> 
+                        
                     </form>
                 </section>
             </div>

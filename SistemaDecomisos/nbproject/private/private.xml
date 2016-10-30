@@ -12,16 +12,17 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/database/Pool.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/model/Model.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/controller/Servlet.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/login.js</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/Proxy.js</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/home.jsp</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/home.js</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/login.jsp</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/web/js/custom.js</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/SistemaDecomisos/SistemaDecomisos/src/java/security/SecurityFilter.java</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/src/java/database/Pool.java</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/src/java/model/Model.java</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/login.jsp</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/css/login.css</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/js/Proxy.js</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/src/java/security/SecurityFilter.java</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/src/java/controller/Servlet.java</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/js/login.js</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/acta.html</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/actaDecomiso.jsp</file>
+            <file>file:/C:/Users/Marco/Desktop/tempProject/SistemaDecomisos-master/SistemaDecomisos-master/SistemaDecomisos/web/js/Utils.js</file>
         </group>
     </open-files>
 </project-private>

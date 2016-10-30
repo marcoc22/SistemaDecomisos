@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Meta, title, CSS, favicons, etc. -->
         <meta charset="utf-8">
@@ -23,9 +24,12 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <!-- NProgress -->
         <link href="css/nprogress.css" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
+        
         <!-- Custom Theme Style -->
         <link href="css/custom.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
 
     </head>
 
@@ -63,7 +67,7 @@
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Gestionar Decomisos <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="#">Registrar acta de decomiso</a></li>
+                                            <li><a href="actaDecomiso.jsp">Registrar acta de decomiso</a></li>
                                             <li><a href="#">Registrar acta de donación</a></li>
                                         </ul>
                                     </li>
@@ -99,6 +103,7 @@
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li><a id="administrar" href="gestionarUsuarios.jsp"><i class="fa fa-cog pull-right" ></i> Gestión de Usuarios</a></li>
                                         <li><a id="logout"><i class="fa fa-sign-out pull-right" ></i> Cerrar Sesión</a></li>
                                     </ul>
                                 </li>
@@ -108,7 +113,7 @@
                 </div>
                 <!-- /top navigation -->
 
-                <!-- page content -->
+                 <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
                         <div class="page-title">
@@ -119,6 +124,7 @@
                     </div>
                 </div>
                 <!-- /page content -->
+               
 
                 <!-- footer content -->
                 <footer>
@@ -139,10 +145,14 @@
         <script src="js/fastclick.js"></script>
         <!-- NProgress -->
         <script src="js/nprogress.js"></script>
-
+        <!--Date-->
+        <script src="js/daterangepicker.js"></script>
+        <script src="js/moment.min.js"></script>
         <!-- Custom Theme Scripts -->
         <script src="js/custom.js"></script>
         <script src="js/home.js"></script>
         <script src="js/Proxy.js"></script>
+      
     </body>
 </html>
+
