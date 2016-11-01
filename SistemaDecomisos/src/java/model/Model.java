@@ -60,7 +60,7 @@ public class Model {
         Connection con = null;
         int res = 0;
         try {
-            con = conexion.dataSource.getConnection();
+            con = Pool.getConnection();
             PreparedStatement pstmt = null;
             ResultSet rs = null;
             if (con != null) {
@@ -73,13 +73,12 @@ public class Model {
                         + "?,"
                         + "?,"
                         + "?,"
-                        + "? );";
-                
+                        + "? );"
                         + "'" + acta.getIdDecomiso() + "',"
                         + "'" + acta.getPolicia().getIdPolicia() + "',"
                         + "'" + acta.getInteresado().getIdInteresado() + "',"
                         + "'" + acta.getLugar().getDistrito().getIdDistrito() + "',"
-                        + "'" + convertFromJAVADateToSQLDate(sdf.parse(acta.getFecha())) + "',"
+                        + "'" + convertFromJAVADateToSQLDate(acta.getFecha()) + "',";
 
                 pstmt = con.prepareStatement(mysql);
                 pstmt.setInt(1, acta.getIdDecomiso());
@@ -87,7 +86,7 @@ public class Model {
                 pstmt.setInt(3, acta.getInteresado().getIdInteresado());
                 pstmt.setInt(4, acta.getLugar().getDistrito().getIdDistrito());
                 pstmt.setString(5, p.getMadre());
-                pstmt.setDate(6, convertFromJAVADateToSQLDate(sdf.parse(acta.getFecha())));
+                pstmt.setDate(6, convertFromJAVADateToSQLDate(acta.getFecha()));
                 pstmt.setString(7, p.getFecharc());
                 pstmt.setString(8, p.getLugar_nacimiento());
                 pstmt.setInt(9, p.getTipo_id());
