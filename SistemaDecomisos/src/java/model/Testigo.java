@@ -12,24 +12,24 @@ import java.io.Serializable;
  * @author Marco
  */
 public class Testigo extends Persona implements Serializable, Jsonable  {
-    private int idPolicia;
+    private int idTestigo;
     
 
     public Testigo(){
         super();
     }
 
-    public Testigo(int idPolicia, String identificacion, String nombre, String apellido1, String apellido2) {
+    public Testigo(int idTestigo, String identificacion, String nombre, String apellido1, String apellido2) {
         super(identificacion,nombre,apellido1,apellido2);
-        this.idPolicia = idPolicia;
+        this.idTestigo = idTestigo;
     }
 
     public int getIdPolicia() {
-        return idPolicia;
+        return idTestigo;
     }
 
-    public void setIdPolicia(int idPolicia) {
-        this.idPolicia = idPolicia;
+    public void setIdTestigo(int idTestigo) {
+        this.idTestigo = idTestigo;
     }
 
 }
