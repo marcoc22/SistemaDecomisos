@@ -67,12 +67,13 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="estado">Estado</label>
+                                                
                                                 <div>
                                                     <label class="radio-inline">
                                                         <input id="activo" type="radio" name="estado" value="activo">Activo 
                                                     </label>
                                                     <label class="radio-inline">
-                                                        <input id="desactivo" type="radio" name="estado" value="desactivo">Desactivo 
+                                                        <input id="inactivo" type="radio" name="estado" value="inactivo">Inactivo 
                                                     </label>
                                                 </div>
                                             </div>
