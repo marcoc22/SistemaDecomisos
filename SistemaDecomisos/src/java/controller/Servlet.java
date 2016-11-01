@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.ActaDecomiso;
-import model.Jsonable;
-import model.Model;
-import model.Usuario;
+import model.*;
 
 /**
  *
@@ -44,13 +42,19 @@ public class Servlet extends HttpServlet {
             RuntimeTypeAdapterFactory<Jsonable> rta = RuntimeTypeAdapterFactory.of(Jsonable.class, "_class")
                     .registerSubtype(Usuario.class, "Usuario")
                     .registerSubtype(ActaDecomiso.class, "ActaDecomiso")
-                    .registerSubtype(Usuario.class, "Usuario")
-                    .registerSubtype(Usuario.class, "Usuario")
-                    .registerSubtype(Usuario.class, "Usuario");
+                    .registerSubtype(Decomiso.class, "Decomiso")
+                    .registerSubtype(Funcionario.class, "Funcionario")
+                    .registerSubtype(Interesado.class, "Interesado")
+                    .registerSubtype(Lugar.class, "Lugar")
+                    .registerSubtype(Distrito.class, "Distrito")
+                    .registerSubtype(Policia.class, "Policia")
+                    .registerSubtype(Testigo.class, "Testigo");
             Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
             String json;
+            final String finalJson;
             String accion = request.getParameter("action");
             Model model = (Model) request.getSession().getAttribute("model");
+            ActaDecomiso actaDecomiso;
             switch (accion) {
                 case "userLogin":
                     if(model==null)
@@ -72,6 +76,9 @@ public class Servlet extends HttpServlet {
                     request.getSession().invalidate();
                     break;
                 case "guardarActa":
+                    json = request.getParameter("actaDecomiso");
+                    finalJson = new String(json.getBytes("iso-8859-1"), "UTF-8");
+                    actaDecomiso = gson.fromJson(finalJson, ActaDecomiso.class);
                     
                     break;
 
