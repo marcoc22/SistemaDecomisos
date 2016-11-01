@@ -55,7 +55,7 @@ public class Model {
         }
         return user;
     }
-
+/*
     public int guardarActaDecomiso(ActaDecomiso acta) throws SQLException {
         Connection con = null;
         int res = 0;
@@ -115,7 +115,7 @@ public class Model {
         }
         return res;
     }
-
+*/
     public static java.sql.Date convertFromJAVADateToSQLDate(java.util.Date javaDate) {
         java.sql.Date sqlDate = null;
         if (javaDate != null) {
