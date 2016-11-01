@@ -10,6 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+//import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -61,26 +64,30 @@ public class Model {
             PreparedStatement pstmt = null;
             ResultSet rs = null;
             if (con != null) {
-
-                String mysql = "exec prc_ins_adecomiso("
-                        + "'"+acta.getIdDecomiso()+"',"
-                        + "'"+acta.getPolicia().getIdPolicia()+"',"
-                        + "'"+acta.getInteresado().get+"',"
-                        + "Plugar in number,"
-                        + "Pfecha in date,"
-                        + "PidAcompanante in varchar2,"
-                        + "Pobservaciones in varchar2,"
-                        + "Pidtest in number);";
-
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String mysql = "exec prc_ins_adecomiso("
+                        + "?,"
+                        + "?,"
+                        + "?,"
+                        + "?,"
+                        + "?,"
+                        + "?,"
+                        + "?,"
+                        + "? );";
+                
+                        + "'" + acta.getIdDecomiso() + "',"
+                        + "'" + acta.getPolicia().getIdPolicia() + "',"
+                        + "'" + acta.getInteresado().getIdInteresado() + "',"
+                        + "'" + acta.getLugar().getDistrito().getIdDistrito() + "',"
+                        + "'" + convertFromJAVADateToSQLDate(sdf.parse(acta.getFecha())) + "',"
 
                 pstmt = con.prepareStatement(mysql);
-                pstmt.setString(1, p.getCedula());
-                pstmt.setInt(2, p.getIdCliente());
-                pstmt.setString(3, p.getEmpleado().getCedula());
-                pstmt.setString(4, p.getPadre());
+                pstmt.setInt(1, acta.getIdDecomiso());
+                pstmt.setInt(2, acta.getPolicia().getIdPolicia());
+                pstmt.setInt(3, acta.getInteresado().getIdInteresado());
+                pstmt.setInt(4, acta.getLugar().getDistrito().getIdDistrito());
                 pstmt.setString(5, p.getMadre());
-                pstmt.setDate(6, convertFromJAVADateToSQLDate(sdf.parse(p.getFecharc())));
+                pstmt.setDate(6, convertFromJAVADateToSQLDate(sdf.parse(acta.getFecha())));
                 pstmt.setString(7, p.getFecharc());
                 pstmt.setString(8, p.getLugar_nacimiento());
                 pstmt.setInt(9, p.getTipo_id());
@@ -108,5 +115,13 @@ public class Model {
             }
         }
         return res;
+    }
+
+    public static java.sql.Date convertFromJAVADateToSQLDate(java.util.Date javaDate) {
+        java.sql.Date sqlDate = null;
+        if (javaDate != null) {
+            sqlDate = new Date(javaDate.getTime());
+        }
+        return sqlDate;
     }
 }
