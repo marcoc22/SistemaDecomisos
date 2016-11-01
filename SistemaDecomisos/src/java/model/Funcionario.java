@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marco
  */
-public class Funcionario {
+public class Funcionario implements Serializable, Jsonable{
     private String id;
     private String nombre;
     private String apellido1;
