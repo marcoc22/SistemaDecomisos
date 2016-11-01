@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.ActaDecomiso;
 import model.Jsonable;
 import model.Model;
 import model.Usuario;
@@ -41,6 +42,10 @@ public class Servlet extends HttpServlet {
 
             response.setContentType("text/xml");
             RuntimeTypeAdapterFactory<Jsonable> rta = RuntimeTypeAdapterFactory.of(Jsonable.class, "_class")
+                    .registerSubtype(Usuario.class, "Usuario")
+                    .registerSubtype(ActaDecomiso.class, "ActaDecomiso")
+                    .registerSubtype(Usuario.class, "Usuario")
+                    .registerSubtype(Usuario.class, "Usuario")
                     .registerSubtype(Usuario.class, "Usuario");
             Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
             String json;
@@ -65,6 +70,9 @@ public class Servlet extends HttpServlet {
                     request.getSession().removeAttribute("usuario");
                     request.getSession().removeAttribute("model");
                     request.getSession().invalidate();
+                    break;
+                case "guardarActa":
+                    
                     break;
 
             }
