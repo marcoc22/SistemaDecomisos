@@ -58,7 +58,7 @@
                                                 <label for="tipoUsuario">Tipo de Usuario</label>
                                                 <div>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="tipoUsuario" value="funcionario">Funcionario 
+                                                        <input type="radio" name="tipoUsuario" value="funcionario" checked>Funcionario 
                                                     </label>
                                                     <label class="radio-inline">
                                                         <input type="radio" name="tipoUsuario" value="policia">Policía Municipal 
@@ -70,7 +70,7 @@
                                                 
                                                 <div>
                                                     <label class="radio-inline">
-                                                        <input id="activo" type="radio" name="estado" value="activo">Activo 
+                                                        <input id="activo" type="radio" name="estado" value="activo" checked>Activo 
                                                     </label>
                                                     <label class="radio-inline">
                                                         <input id="inactivo" type="radio" name="estado" value="inactivo">Inactivo 

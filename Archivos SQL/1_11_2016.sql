@@ -548,3 +548,6 @@ BEGIN
 end prc_sel_test;
 /
 show error;
+
+exec prc_ins_func ('Mario','Jefe');
+exec prc_ins_user('123',1,'mario',1,1);
