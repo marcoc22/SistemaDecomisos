@@ -91,8 +91,8 @@ public class Servlet extends HttpServlet {
                     out.write(json);
                     break;
                 case "listadoPolicias":
-                    funcionarios = model.listadoFuncionarios();
-                    json = gson.toJson(funcionarios);
+                    policias = model.listadoPolicias();
+                    json = gson.toJson(policias);
                     out.write(json);
                     break;
 

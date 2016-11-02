@@ -23,6 +23,7 @@
         <script src="js/BaseDatos.js"></script>
         <script src="js/objects/Usuario.js"></script>
         <script src="js/objects/Funcionario.js"></script>
+        <script src="js/objects/Policia.js"></script>
         <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
         
     </head>
