@@ -1,11 +1,24 @@
-function showPopUp(action){
+$(document).ready(function () {
+    
+});
+function showPopUp(action) {
     cargarListado();
-    $("#modalAgregarUsuario").modal('show');;
+    $("#modalAgregarUsuario").modal('show');
+    ;
 }
-function cargarListado(){
-    if(document.getElementById("funcionarioRadio").checked){
+function cargarListado() {
+    if (document.getElementById("funcionarioRadio").checked) {
         Proxy.listadoFuncionarios();
-    }else{
+    } else {
         Proxy.listadoPolicias();
     }
 }
+function mouseoverPass(obj) {
+    var obj = document.getElementById('pass');
+    obj.type = "text";
+}
+function mouseoutPass(obj) {
+    var obj = document.getElementById('pass');
+    obj.type = "password";
+}
+

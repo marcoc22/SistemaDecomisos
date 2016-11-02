@@ -1,15 +1,18 @@
-function Usuario(nick, contrasena) {
-    this.Usuario(nick, contrasena);
+function Usuario(idUsuario,nick, contrasena,estado,privilegio) {
+    this.Usuario(idUsuario,nick, contrasena,estado,privilegio);
 }
 
 Usuario.prototype = {
-    
+    idUsuario: 0,
     nick: "",
     contrasena: "",
-    Usuario: function (nick, contrasena) {
-      
+    estado: 0,
+    privilegio:0,
+    Usuario: function (idUsuario,nick, contrasena,estado,privilegio) {
+        this.idUsuario = idUsuario;
         this.nick = nick;
         this.contrasena = contrasena;
+        this.estado = estado;
     },
     toString: function () {
         return this.nick;
