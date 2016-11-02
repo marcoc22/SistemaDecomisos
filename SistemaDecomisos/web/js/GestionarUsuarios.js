@@ -22,15 +22,24 @@ function mouseoutPass(obj) {
     obj.type = "password";
 }
 function guardarUsuario(){
-     idUsuario: 0,
-    nick: "",
-    contrasena: "",
-    estado: 0,
-    privilegio: 0,
+    var activo=document.getElementById("activo");
+    var privilegio=document.getElementById("esAdmin");
+    var estado=0;
+    var priv=0;
+    if(activo.checked){
+        estado=1;
+    }
+    if(privilegio.checked){
+        priv=1;
+    }
+    
     var usuario = new Usuario(
     0,
-    
-            );
+    $("#nuevo_usuario").val(),
+    $("#pass").val(),
+    estado,
+    priv
+    );
 }
 function validarCampos(){
    
