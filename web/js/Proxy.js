@@ -87,3 +87,21 @@ Proxy.listadoPolicias = function () {
         }
     });
 };
+
+Proxy.actaDecomiso = function (criterio) {
+    $.ajax({
+        url: "/SistemaDecomisos/Servlet?action=guardarActa",
+        type: "POST",
+        data: "actaDecomiso=" + criterio,
+        dataType: 'json',
+        contentType: "application/x-www-form-urlencoded",
+        success: function (data) {
+            if (data != null) {
+                window.location.href = "home.jsp";
+            } else {
+                $("#login").html("Iniciar Sesi\u00F3n ");
+                errorLogin();
+            }
+        }
+    });
+};
