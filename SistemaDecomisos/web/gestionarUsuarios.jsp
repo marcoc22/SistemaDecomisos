@@ -283,7 +283,8 @@
         <script src="js/forms.js"></script>
         <script src="js/multifield.js"></script>
         <script src="js/validator.js"></script>
-        <script src="js/Funcionario.js"></script>
+        <script src="js/objects/Funcionario.js"></script>
+        <script src="js/objects/Contenedor.js"></script>
         <script src="js/Utils.js"></script>
         <script src="js/BaseDatos.js"></script>
         <script src="js/Proxy.js"></script>

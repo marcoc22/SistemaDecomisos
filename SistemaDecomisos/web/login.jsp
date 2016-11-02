@@ -22,6 +22,7 @@
         <script src="js/Proxy.js"></script>
         <script src="js/BaseDatos.js"></script>
         <script src="js/objects/Usuario.js"></script>
+        <script src="js/objects/Funcionario.js"></script>
         <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
         
     </head>
@@ -29,23 +30,23 @@
         <div class="login_wrapper">
             <div class="animate form login-form">
                 <section class="login-content">
-                    <form action="home.jsp" method="GET">
+                    
                         <h1>Sistema de Gestión de Decomisos</h1>
                         <div class="logo ">
                             <img src="media/images/logo.png" alt="logo">
                         </div>
                         <div class="form-group log-status">
-                            <input type="text" name="username" class="form-control" placeholder="Usuario" id="UserName" onkeyup="actionKey(event);">
+                            <input type="text"  class="form-control" placeholder="Usuario" id="UserName" onkeyup="actionKey(event);">
                             <i class="fa fa-user"></i>
                         </div>
                         <div class="form-group log-status">
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" id="PassWord" onkeyup="actionKey(event);">
+                            <input type="password"  class="form-control" placeholder="Contraseña" id="PassWord" onkeyup="actionKey(event);">
                             <i class="fa fa-lock"></i>
                         </div>
                         <span class="alert">¡Datos Erróneos! <br/>Si ha olvidado la contraseña, contacte con el administrador.</span>
                         <button class="log-btn" id="login">Iniciar Sesión </button> 
                         
-                    </form>
+                    
                 </section>
             </div>
         </div>

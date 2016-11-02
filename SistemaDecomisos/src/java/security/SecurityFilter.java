@@ -25,7 +25,7 @@ import model.Usuario;
  */
 public class SecurityFilter implements Filter {
 
-    List<String> FuncionarioActions = Arrays.asList();
+    List<String> FuncionarioActions = Arrays.asList("/home.jsp");
 
     List<String>[] userActions;
 
@@ -56,10 +56,11 @@ public class SecurityFilter implements Filter {
         } else {  // restricted access*/
             Usuario user = (Usuario) ses.getAttribute("usuario");
 
-            if (user == null) {
+            if (user == null ) {
                 resp.sendRedirect(LOGIN);
             } else {
                 chain.doFilter(request, response);
+
             }
             /*else{
              resp.sendRedirect(SEGURIDAD);

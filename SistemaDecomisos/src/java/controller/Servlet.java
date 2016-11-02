@@ -57,15 +57,16 @@ public class Servlet extends HttpServlet {
             Model model = (Model) request.getSession().getAttribute("model");
             ActaDecomiso actaDecomiso;
             List<Funcionario> funcionarios;
+            List<Policia> policias;
             switch (accion) {
                 case "userLogin":
-                    if(model==null){
-                        model=new Model();
+                    if (model == null) {
+                        model = new Model();
                         request.getSession().setAttribute("model", model);
                     }
                     json = request.getParameter("user");// se obtiene un json del cliente, proviene de un objeto Usuario
                     Usuario usuario = gson.fromJson(json, Usuario.class);
-                    usuario = model.login(usuario.getNick(),usuario.getContrasena());
+                    usuario = model.login(usuario.getNick(), usuario.getContrasena());
                     if (usuario != null) {
                         //Funcionario funcionario=model.obtenerFuncionario(String id);
                         request.getSession().setAttribute("usuario", usuario);// El objeto Usuario es enviado a la sesión
@@ -85,6 +86,11 @@ public class Servlet extends HttpServlet {
                     actaDecomiso = gson.fromJson(finalJson, ActaDecomiso.class);
                     break;
                 case "listadoFuncionarios":
+                    funcionarios = model.listadoFuncionarios();
+                    json = gson.toJson(funcionarios);
+                    out.write(json);
+                    break;
+                case "listadoPolicias":
                     funcionarios = model.listadoFuncionarios();
                     json = gson.toJson(funcionarios);
                     out.write(json);
