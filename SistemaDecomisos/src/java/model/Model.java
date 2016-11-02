@@ -72,7 +72,7 @@ public class Model {
                 int idFuncionario=0;
                 String nombre="";
                 String puesto="";
-                if (rs.next()) {
+                while (rs.next()) {
                     idFuncionario=rs.getInt("IdFuncionario");
                     nombre=rs.getString("nombre");
                     puesto=rs.getString("puesto");
