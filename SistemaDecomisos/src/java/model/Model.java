@@ -35,12 +35,16 @@ public class Model {
             ResultSet rs = null;
             if (con != null) {
                 
-                String sql = "select 1 from UsuarioM where UsuarioM.nick='" + nick + "' and UsuarioM.contrasena='" + pass + "'";
+                String sql = "select privilegio from UsuarioM "
+                        + "where UsuarioM.nick='" + nick + "' "
+                        + "and UsuarioM.contrasena='" + pass + "' "
+                        + "and UsuarioM.estado=1";
                 pstmt = con.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 if (rs.next()) {
                     user = new Usuario();
                     user.setNick(nick);
+                    user.setPrivilegio(rs.getInt("privilegio"));
                 }
             }
 

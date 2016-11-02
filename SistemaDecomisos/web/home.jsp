@@ -6,8 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
+    
     <head>
       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,7 +32,6 @@
         <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
 
     </head>
-
     <body class="nav-md">
         <div class="container body">
             <div class="main_container">
@@ -51,7 +50,7 @@
                             </div>
                             <div class="profile_info">
                                 <span>Bienvenido,</span>
-                                <h2>User</h2>
+                                <h2><%%></h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
