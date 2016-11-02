@@ -19,6 +19,7 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-checkbox.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -49,12 +50,12 @@
                                 <div class="x_panel">
                                     <div class="x_title" id="add_user">
                                         <h2>Datos del Usuario</h2>
-                                        
+
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="x_content" >
                                         <div class="form-horizontal">
-                                        <!--<form id="form_agregar_usuario" role="form" class="form-horizontal">-->
+                                            <!--<form id="form_agregar_usuario" role="form" class="form-horizontal">-->
                                             <div class="form-group">
                                                 <label for="tipoUsuario">Tipo de Usuario</label>
                                                 <div>
@@ -68,7 +69,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="estado">Estado</label>
-                                                
+
                                                 <div>
                                                     <label class="radio-inline">
                                                         <input id="activo" type="radio" name="estado" value="activo" checked>Activo 
@@ -91,18 +92,17 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="nueva_contraseña">Contraseña</label>
+                                                <label for="pass">Contraseña</label>
                                                 <div>
-                                                    <input type="text" id="nueva_contraseña" disabled class="col-md-2"> 
-                                                    &nbsp;<button class="btn btn-round btn-xs" onclick="generate();"> Generar contraseña <i class="fa fa-refresh"></i></button>
+                                                    <input type="password" id="pass" class="col-md-2">
+                                                    <div class="fa-hover col-md-2" ><a onmouseover="mouseoverPass();" onmouseout="mouseoutPass();"><i class="fa fa-eye"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="nueva_imagen">Imagen de usuario</label>
-                                                <div>
-                                                    <input type="file" id="nueva_imagen" class="col-md-6">
-                                                </div>
+                                                <label for="esAdmin">Administrador <input id="esAdmin" type="checkbox" /></label>
                                             </div>
+
                                             <div class="ln_solid"></div>
                                             <div class="form-group">
                                                 <div class="col-md-9 col-md-offset-3">
@@ -110,7 +110,7 @@
                                                     <button type="reset" class="btn btn-danger btn-sm" id="cancelar_agregar_usuario" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
                                                 </div>
                                             </div>
-                                        <!--</form>-->
+                                            <!--</form>-->
                                         </div>
                                     </div>
                                 </div>
@@ -271,6 +271,7 @@
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-checkbox.js"></script>
         <!-- FastClick -->
         <script src="js/fastclick.js"></script>
         <!-- NProgress -->
