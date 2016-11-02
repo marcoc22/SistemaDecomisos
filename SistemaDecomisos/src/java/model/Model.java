@@ -61,6 +61,41 @@ public class Model {
         }
         return user;
     }
+    public int guardarUsuario(Usuario usuario) {
+        Connection con = null;
+        int res=0;//res =0 cuando hay error en conexion
+        try {
+            con = Pool.getConnection();
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+            if (con != null) {
+         
+                String sql = "exec prc_ins_user(?,?,?,?,?)";
+                pstmt = con.prepareStatement(sql);
+
+                pstmt.setString(1, usuario.getContrasena());
+                pstmt.setInt(2, 1);//este 1 es temporal mientras se elimina en bd el campo idFuncionario
+                pstmt.setString(3, usuario.getNick());
+                pstmt.setInt(4, usuario.getEstado());
+                pstmt.setInt(5, usuario.getPrivilegio());
+
+                pstmt.executeUpdate();
+                res=2;// res = 2 cuando indica exito!
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            res=1;//res  = 1 cuando hay excepcion, ejemplo: llave primaria repetida
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                res=1;//res  = 1 cuando hay excepcion, ejemplo: llave primaria repetida
+            }
+        }
+        return res;
+    }
     public List<Funcionario> listadoFuncionarios() {
         Connection con = null;
         List<Funcionario> funcionarios = new ArrayList<Funcionario>();

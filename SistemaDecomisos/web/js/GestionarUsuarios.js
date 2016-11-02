@@ -40,6 +40,9 @@ function guardarUsuario(){
     estado,
     priv
     );
+    
+    Proxy.guardarUsuario(JSON.stringify(usuario, replacer));
+    
 }
 function validarCampos(){
    
