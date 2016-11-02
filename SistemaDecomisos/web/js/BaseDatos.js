@@ -30,13 +30,19 @@ function retrieve(id){
 function revive(k,v) {
 	if (v instanceof Object && v._class == 'Usuario') {
 		return Usuario.from(v);
-	}	
+	}
+        if (v instanceof Object && v._class == 'Funcionario') {
+		return Funcionario.from(v);
+	}
     return v;
 }
 
 function replacer(k,v) {
 	if (v instanceof Usuario) {
 		return Usuario.to(v);
+	}
+        if (v instanceof Funcionario) {
+		return Funcionario.to(v);
 	}
         
 	return v;

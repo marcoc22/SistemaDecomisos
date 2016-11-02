@@ -1,36 +1,44 @@
-function Funcionario(id, nombre, apellido1, apellido2) {
-    this.Funcionario(id, nombre, apellido1, apellido2);
+function Funcionario(identificacion, puesto, nombre, apellido1, apellido2, idFuncionario) {
+    this.Funcionario(identificacion, puesto, nombre, apellido1, apellido2, idFuncionario);
 }
 
 Funcionario.prototype = {
-    id: int, 
+    identificacion: "",
+    puesto: "",
     nombre: "",
-    apellido1 : "",
-    apellido2 : "",
-    Funcionario: function (id, nombre, apellido1, apellido2) {
-        this.id = id, 
-        this.nombre = nombre,
-        this.apellido1 = apellido1,
+    apellido1: "",
+    apellido2: "",
+    idFuncionario: 0,
+    Funcionario: function (identificacion, puesto, nombre, apellido1, apellido2, idFuncionario) {
+        this.identificacion = identificacion;
+        this.puesto = puesto;
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
         this.apellido2 = apellido2;
+        this.idFuncionario = idFuncionario;
     }
 };
 
 Funcionario.from = function (plain) {
     funcionario = new Funcionario(
-    plain.id, 
-    plain.nombre,
-    plain.apellido1,
-    plain.apellido2);
+            plain.identificacion,
+            plain.puesto,
+            plain.nombre,
+            plain.apellido1,
+            plain.apellido2,
+            plain.idFuncionario);
     return funcionario;
 };
 
 Funcionario.to = function (funcionario) {
     return {
         _class: 'Funcionario',
-        id: funcionario.idFuncionario, 
-        nombre : funcionario.nombre,
-        apellido1 : funcionario.apellido1,
-        apellido2 : funcionario.apellido2
+        identificacion: funcionario.idFuncionario,
+        puesto: funcionario.puesto,
+        nombre: funcionario.nombre,
+        apellido1: funcionario.apellido1,
+        apellido2: funcionario.apellido2,
+        idFuncionario: funcionario.idFuncionario
     };
 };
  

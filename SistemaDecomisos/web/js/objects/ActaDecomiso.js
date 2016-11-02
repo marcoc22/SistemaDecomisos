@@ -3,7 +3,7 @@ function ActaDecomiso(idDecomiso, policia, testigo, lugar, fecha, hora, interesa
 }
 
 ActaDecomiso.prototype = {
-    idDecomiso: int, 
+    idDecomiso: 0, 
     policia: "", 
     testigo: "", 
     lugar: "", 

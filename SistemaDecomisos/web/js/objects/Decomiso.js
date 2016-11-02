@@ -3,9 +3,9 @@ function Decomiso(idDecomiso, nombre, cantidad, observaciones) {
 }
 
 Decomiso.prototype = {
-    idDecomiso: int, 
+    idDecomiso: 0, 
     nombre: "", 
-    cantidad: int,
+    cantidad: 0,
     observaciones: "",
     Decomiso: function (idDecomiso, nombre, cantidad, observaciones) {
         this.idDecomiso = idDecomiso, 

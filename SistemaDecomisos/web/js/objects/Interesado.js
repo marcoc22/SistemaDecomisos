@@ -3,7 +3,7 @@ function Interesado(idInteresado, fechaNacimiento, domicilio) {
 }
 
 Interesado.prototype = {
-    idInteresado: int, 
+    idInteresado: 0, 
     fechaNacimiento: "",
     domicilio : "",
     Interesado: function (idInteresado, fechaNacimiento, domicilio) {

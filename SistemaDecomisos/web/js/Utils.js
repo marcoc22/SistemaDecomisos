@@ -6,4 +6,8 @@ function validateEnter(e) {
         return false;
     }
 }
+function clearRoot(root) {
+    while (root.firstChild)
+        root.removeChild(root.firstChild);
+}
                                         

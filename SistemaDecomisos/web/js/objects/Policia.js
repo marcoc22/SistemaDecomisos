@@ -3,7 +3,10 @@ function Policia(idPolicia) {
 }
 
 Policia.prototype = {
-    idPolicia : "", 
+    idPolicia : 0, 
+    nombre: "",
+    apellido1 : "",
+    apellido2 : "",
     Policia: function (idPolicia) {
         this.idPolicia = idPolicia;
     }
