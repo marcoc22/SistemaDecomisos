@@ -25,7 +25,6 @@ String.prototype.shuffle = function () {
             array[current] = array[top];
             array[top] = tmp;
         }
-
     return array.join('');
 };
 function generate(){
