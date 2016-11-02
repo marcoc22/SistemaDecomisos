@@ -58,7 +58,7 @@
                                                 <label for="tipoUsuario">Tipo de Usuario</label>
                                                 <div>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="tipoUsuario" value="funcionario" checked>Funcionario 
+                                                        <input id="funcionarioRadio" type="radio" name="tipoUsuario" value="funcionario" checked>Funcionario 
                                                     </label>
                                                     <label class="radio-inline">
                                                         <input type="radio" name="tipoUsuario" value="policia">Policía Municipal 
@@ -78,9 +78,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="nuevo_nombre">Nombre</label>
+                                                <label for="listadoNombre">Nombre</label>
                                                 <div>
-                                                    <input type="text" id="nuevo_nombre" class="col-md-4">
+                                                    <select id="listadoNombre"></select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -283,6 +283,10 @@
         <script src="js/forms.js"></script>
         <script src="js/multifield.js"></script>
         <script src="js/validator.js"></script>
+        <script src="js/Funcionario.js"></script>
+        <script src="js/Utils.js"></script>
+        <script src="js/BaseDatos.js"></script>
+        <script src="js/Proxy.js"></script>
         <script src="js/GestionarUsuarios.js"></script>
     </body>
 </html>

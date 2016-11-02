@@ -25,12 +25,12 @@ import model.Usuario;
  */
 public class SecurityFilter implements Filter {
 
-    List<String> FuncionarioActions = Arrays.asList("/home.jsp");
+    List<String> FuncionarioActions = Arrays.asList();
 
     List<String>[] userActions;
 
     public SecurityFilter() {
-        userActions = (List<String>[]) new List[3];
+        userActions = (List<String>[]) new List[2];
         userActions[1] = FuncionarioActions;
     }
 

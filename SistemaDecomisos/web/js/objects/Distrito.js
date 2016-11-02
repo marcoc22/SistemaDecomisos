@@ -3,7 +3,7 @@ function Distrito(idDistrito, nombreDistrito) {
 }
 
 Distrito.prototype = {
-    idDistrito: int, 
+    idDistrito: 0, 
     nombreDistrito: "", 
     Distrito: function (idDistrito, nombreDistrito) {
         this.idDistrito = idDistrito, 

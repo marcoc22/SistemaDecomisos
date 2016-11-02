@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -55,10 +56,13 @@ public class Servlet extends HttpServlet {
             String accion = request.getParameter("action");
             Model model = (Model) request.getSession().getAttribute("model");
             ActaDecomiso actaDecomiso;
+            List<Funcionario> funcionarios;
             switch (accion) {
                 case "userLogin":
-                    if(model==null)
+                    if(model==null){
                         model=new Model();
+                        request.getSession().setAttribute("model", model);
+                    }
                     json = request.getParameter("user");// se obtiene un json del cliente, proviene de un objeto Usuario
                     Usuario usuario = gson.fromJson(json, Usuario.class);
                     usuario = model.login(usuario.getNick(),usuario.getContrasena());
@@ -79,9 +83,12 @@ public class Servlet extends HttpServlet {
                     json = request.getParameter("actaDecomiso");
                     finalJson = new String(json.getBytes("iso-8859-1"), "UTF-8");
                     actaDecomiso = gson.fromJson(finalJson, ActaDecomiso.class);
-                    
                     break;
-                    
+                case "listadoFuncionarios":
+                    funcionarios = model.listadoFuncionarios();
+                    json = gson.toJson(funcionarios);
+                    out.write(json);
+                    break;
 
             }
         } catch (Exception e) {

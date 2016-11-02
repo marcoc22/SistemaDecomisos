@@ -10,9 +10,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 //import java.util.Date;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -33,7 +34,8 @@ public class Model {
             PreparedStatement pstmt = null;
             ResultSet rs = null;
             if (con != null) {
-                String sql = "select 1 from UsuarioM where UsuarioM.IdUser='" + nick + "' and UsuarioM.contrasena='" + pass + "'";
+                
+                String sql = "select 1 from UsuarioM where UsuarioM.nick='" + nick + "' and UsuarioM.contrasena='" + pass + "'";
                 pstmt = con.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 if (rs.next()) {
@@ -54,6 +56,42 @@ public class Model {
             }
         }
         return user;
+    }
+    public List<Funcionario> listadoFuncionarios() {
+        Connection con = null;
+        List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+        try {
+            con = Pool.getConnection();
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+            if (con != null) {
+                
+                String sql = "select * from FUNCIONARIO ";
+                pstmt = con.prepareStatement(sql);
+                rs = pstmt.executeQuery();
+                int idFuncionario=0;
+                String nombre="";
+                String puesto="";
+                if (rs.next()) {
+                    idFuncionario=rs.getInt("IdFuncionario");
+                    nombre=rs.getString("nombre");
+                    puesto=rs.getString("puesto");
+                    funcionarios.add(new Funcionario(idFuncionario,puesto,"",nombre,"",""));
+                }
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            funcionarios = null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                funcionarios = null;
+            }
+        }
+        return funcionarios;
     }
 /*
     public int guardarActaDecomiso(ActaDecomiso acta) throws SQLException {
@@ -123,4 +161,5 @@ public class Model {
         }
         return sqlDate;
     }
+    
 }
