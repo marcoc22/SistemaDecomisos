@@ -91,3 +91,29 @@ Proxy.listadoPolicias = function () {
         }
     });
 };
+Proxy.guardarUsuario = function (criterio) {
+    
+    $.ajax({
+        url: "/SistemaDecomisos/Servlet?action=guardarUsuario",
+        type: "POST",
+        data: "usuario=" + criterio,
+        dataType: 'json',
+        contentType: "application/x-www-form-urlencoded",
+        success: function (data) {
+            if (data != null) {
+                var res=Number(data);
+                switch(res){
+                    case 0:
+                    alert("error en conexion")
+                    case 1:
+                        alert("error,usuario repetido");
+                        break;
+                    case 2:
+                        alert("guardado correctamente");
+                }
+            } else {
+                alert("error al guardar");
+            }
+        }
+    });
+};

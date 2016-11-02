@@ -70,5 +70,4 @@ public class Usuario implements Serializable, Jsonable {
         this.privilegio = privilegio;
     }
 
-    
 }

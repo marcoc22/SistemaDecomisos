@@ -54,8 +54,10 @@ public class Servlet extends HttpServlet {
             String json;
             final String finalJson;
             String accion = request.getParameter("action");
+            Integer res;
             Model model = (Model) request.getSession().getAttribute("model");
             ActaDecomiso actaDecomiso;
+            Usuario usuario;
             List<Funcionario> funcionarios;
             List<Policia> policias;
             switch (accion) {
@@ -65,7 +67,7 @@ public class Servlet extends HttpServlet {
                         request.getSession().setAttribute("model", model);
                     }
                     json = request.getParameter("user");// se obtiene un json del cliente, proviene de un objeto Usuario
-                    Usuario usuario = gson.fromJson(json, Usuario.class);
+                    usuario = gson.fromJson(json, Usuario.class);
                     usuario = model.login(usuario.getNick(), usuario.getContrasena());
                     if (usuario != null) {
                         //Funcionario funcionario=model.obtenerFuncionario(String id);
@@ -94,6 +96,12 @@ public class Servlet extends HttpServlet {
                     policias = model.listadoPolicias();
                     json = gson.toJson(policias);
                     out.write(json);
+                    break;
+                case "guardarUsuario":
+                    json = request.getParameter("usuario");// se obtiene un json del cliente, proviene de un objeto Usuario
+                    usuario = gson.fromJson(json, Usuario.class);
+                    res = model.guardarUsuario(usuario);
+                    out.write(res.toString());// Se envía el objeto Usuario como json al cliente
                     break;
 
             }

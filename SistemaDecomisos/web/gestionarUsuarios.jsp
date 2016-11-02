@@ -106,17 +106,21 @@
                                             <div class="ln_solid"></div>
                                             <div class="form-group">
                                                 <div class="col-md-9 col-md-offset-3">
-                                                    <button type="submit" class="btn btn-primary btn-sm" id="agregar_usuario"><i class="fa fa-save"></i> Agregar Usuario </button>
+                                                    <button type="submit" class="btn btn-primary btn-sm" id="agregar_usuario" onclick="guardarUsuario();"><i class="fa fa-save" ></i> Agregar Usuario </button>
                                                     <button type="reset" class="btn btn-danger btn-sm" id="cancelar_agregar_usuario" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
                                                 </div>
                                             </div>
+                                            
                                             <!--</form>-->
+
                                         </div>
                                     </div>
                                 </div>
                             </div> 
                         </div>
+
                         <div class="modal-footer">
+
                             <button type="button" class="btn btn-default" data-dismiss="modal" >Cerrar</button> 
                         </div>
                     </div><!-- /.modal-content -->
@@ -288,6 +292,7 @@
         <script src="js/validator.js"></script>
         <script src="js/objects/Funcionario.js"></script>
         <script src="js/objects/Policia.js"></script>
+        <script src="js/objects/Usuario.js"></script>
         <script src="js/objects/Contenedor.js"></script>
         <script src="js/Utils.js"></script>
         <script src="js/BaseDatos.js"></script>
