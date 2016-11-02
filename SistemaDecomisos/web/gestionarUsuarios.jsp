@@ -53,15 +53,16 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="x_content" >
-                                        <form id="form_agregar_usuario" role="form" class="form-horizontal">
+                                        <div class="form-horizontal">
+                                        <!--<form id="form_agregar_usuario" role="form" class="form-horizontal">-->
                                             <div class="form-group">
                                                 <label for="tipoUsuario">Tipo de Usuario</label>
                                                 <div>
                                                     <label class="radio-inline">
-                                                        <input id="funcionarioRadio" type="radio" name="tipoUsuario" value="funcionario" checked>Funcionario 
+                                                        <input id="funcionarioRadio" type="radio" name="tipoUsuario" value="funcionario" checked onchange="cargarListado();">Funcionario 
                                                     </label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="tipoUsuario" value="policia">Policía Municipal 
+                                                        <input type="radio" name="tipoUsuario" value="policia" onchange="cargarListado();">Policía Municipal 
                                                     </label>
                                                 </div>
                                             </div>
@@ -93,7 +94,7 @@
                                                 <label for="nueva_contraseña">Contraseña</label>
                                                 <div>
                                                     <input type="text" id="nueva_contraseña" disabled class="col-md-2"> 
-                                                    <button class="btn btn-round btn-xs"><i class="fa fa-search"></i></button>
+                                                    &nbsp;<button class="btn btn-round btn-xs" onclick="generate();"> Generar contraseña <i class="fa fa-refresh"></i></button>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -109,7 +110,8 @@
                                                     <button type="reset" class="btn btn-danger btn-sm" id="cancelar_agregar_usuario" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
                                                 </div>
                                             </div>
-                                        </form>
+                                        <!--</form>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div> 
@@ -284,10 +286,12 @@
         <script src="js/multifield.js"></script>
         <script src="js/validator.js"></script>
         <script src="js/objects/Funcionario.js"></script>
+        <script src="js/objects/Policia.js"></script>
         <script src="js/objects/Contenedor.js"></script>
         <script src="js/Utils.js"></script>
         <script src="js/BaseDatos.js"></script>
         <script src="js/Proxy.js"></script>
+        <script src="js/generator.js"></script>
         <script src="js/GestionarUsuarios.js"></script>
     </body>
 </html>

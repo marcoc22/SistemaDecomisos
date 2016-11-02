@@ -34,6 +34,9 @@ function revive(k,v) {
         if (v instanceof Object && v._class == 'Funcionario') {
 		return Funcionario.from(v);
 	}
+        if (v instanceof Object && v._class == 'Policia') {
+		return Policia.from(v);
+	}
     return v;
 }
 
@@ -43,6 +46,9 @@ function replacer(k,v) {
 	}
         if (v instanceof Funcionario) {
 		return Funcionario.to(v);
+	}
+        if (v instanceof Policia) {
+		return Policia.to(v);
 	}
         
 	return v;

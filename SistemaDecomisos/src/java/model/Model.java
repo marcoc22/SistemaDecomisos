@@ -93,6 +93,40 @@ public class Model {
         }
         return funcionarios;
     }
+    public List<Policia> listadoPolicias() {
+        Connection con = null;
+        List<Policia> policias = new ArrayList<Policia>();
+        try {
+            con = Pool.getConnection();
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+            if (con != null) {
+                
+                String sql = "select * from PoliciaMunicipal ";
+                pstmt = con.prepareStatement(sql);
+                rs = pstmt.executeQuery();
+                int idFuncionario=0;
+                String nombre="";
+                while (rs.next()) {
+                    idFuncionario=rs.getInt("IdPolicia");
+                    nombre=rs.getString("nombre");
+                    policias.add(new Policia(idFuncionario,"",nombre,"",""));
+                }
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            policias = null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                policias = null;
+            }
+        }
+        return policias;
+    }
 /*
     public int guardarActaDecomiso(ActaDecomiso acta) throws SQLException {
         Connection con = null;
