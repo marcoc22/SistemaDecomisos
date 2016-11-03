@@ -41,7 +41,7 @@ Proxy.listadoFuncionarios = function () {
         success: function (data) {
             var select = document.getElementById("listadoNombre");
             clearRoot(select);
-            
+
             if (data != null) {
                 funcionarios = new Contenedor();
                 funcionarios.items = data;
@@ -71,7 +71,7 @@ Proxy.listadoPolicias = function () {
         success: function (data) {
             var select = document.getElementById("listadoNombre");
             clearRoot(select);
-            
+
             if (data != null) {
                 policias = new Contenedor();
                 policias.items = data;
@@ -92,7 +92,7 @@ Proxy.listadoPolicias = function () {
     });
 };
 Proxy.guardarUsuario = function (criterio) {
-    
+
     $.ajax({
         url: "/SistemaDecomisos/Servlet?action=guardarUsuario",
         type: "POST",
@@ -100,19 +100,62 @@ Proxy.guardarUsuario = function (criterio) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         success: function (data) {
+
+
+
+
+            switch (res) {
+                case 0:
+                    mensaje = "Error al actualizar visitante";
+                    document.getElementById("labelAlertError").innerHTML = mensaje;
+                    divError.style.display = "inline-table";
+                    $("#alertError").delay(3000).hide(600);
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+                    mensaje = "Error al actualizar, visitante no existe";
+                    document.getElementById("labelAlertError").innerHTML = mensaje;
+                    divError.style.display = "inline-table";
+                    $("#alertError").delay(3000).hide(600);
+                    break;
+            }
+            var mensaje = "";
+            var divError = document.getElementById("alertError");
+            var divSuccess = document.getElementById("alertSuccess");
+            divError.style.display = "none";
+            divSuccess.style.display = "none";
             if (data != null) {
-                var res=Number(data);
-                switch(res){
+                var res = Number(data);
+
+                switch (res) {
                     case 0:
-                    alert("error en conexion")
+                        mensaje = "Error en conexion al guardar.";
+                        document.getElementById("labelAlertError").innerHTML = mensaje;
+                        divError.style.display = "inline-table";
+                        $("#alertError").delay(3000).hide(600);
+                        break;
                     case 1:
-                        alert("error,usuario repetido");
+                        mensaje = "Error al guardar, usuario existente";
+                        document.getElementById("labelAlertError").innerHTML = mensaje;
+                        divError.style.display = "inline-table";
+                        $("#alertError").delay(3000).hide(600);
                         break;
                     case 2:
-                        alert("guardado correctamente");
+                        mensaje = "Usuario guardado correctamente";
+                        document.getElementById("labelAlertSuccess").innerHTML = mensaje;
+                        divSuccess.style.display = "inline-table";
+                        $("#alertSuccess").show();
+                        $("#alertSuccess").delay(3000).hide(600);
+                        clearForm();
+                        break;
                 }
             } else {
-                alert("error al guardar");
+                mensaje = "Error  al guardar, intente mas tarde";
+                document.getElementById("labelAlertError").innerHTML = mensaje;
+                divError.style.display = "inline-table";
+                $("#alertError").delay(3000).hide(600);
             }
         }
     });

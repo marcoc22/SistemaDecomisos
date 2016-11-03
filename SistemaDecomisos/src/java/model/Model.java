@@ -6,6 +6,7 @@
 package model;
 
 import database.Pool;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,18 +67,17 @@ public class Model {
         int res=0;//res =0 cuando hay error en conexion
         try {
             con = Pool.getConnection();
-            PreparedStatement pstmt = null;
+            CallableStatement pstmt = null;
+           
             ResultSet rs = null;
             if (con != null) {
          
-                String sql = "exec prc_ins_user(?,?,?,?,?)";
-                pstmt = con.prepareStatement(sql);
-
-                pstmt.setString(1, usuario.getContrasena());
-                pstmt.setInt(2, 1);//este 1 es temporal mientras se elimina en bd el campo idFuncionario
-                pstmt.setString(3, usuario.getNick());
-                pstmt.setInt(4, usuario.getEstado());
-                pstmt.setInt(5, usuario.getPrivilegio());
+                String sql = "{call prc_ins_user('"+ usuario.getContrasena()+"',"
+                        + "'1',"//este 1 es temporal mientras se remueve idfuncionario de tabla de usuarios
+                        + "'"+usuario.getNick()+"',"
+                        + "'"+usuario.getEstado()+"',"
+                        + "'"+usuario.getPrivilegio()+"')}";
+                pstmt = con.prepareCall(sql);
 
                 pstmt.executeUpdate();
                 res=2;// res = 2 cuando indica exito!

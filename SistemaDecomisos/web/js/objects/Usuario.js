@@ -1,7 +1,6 @@
 function Usuario(idUsuario, nick, contrasena, estado, privilegio) {
     this.Usuario(idUsuario, nick, contrasena, estado, privilegio);
 }
-
 Usuario.prototype = {
     idUsuario: 0,
     nick: "",
