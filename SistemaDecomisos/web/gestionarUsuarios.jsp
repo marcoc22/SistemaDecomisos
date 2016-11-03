@@ -106,11 +106,11 @@
 
                                             <div class="ln_solid"></div>
                                             <div class="form-group">
-                                                <div id="alertError" class="alert alert-danger" style=" z-index: 1003; display:none;">
-                                                    <p id="labelAlertError" style=" margin-left: 30%;"></p>
+                                                <div align="center" id="alertError" class="alert alert-danger" style=" z-index: 1003; margin-left: 25%;display:none;">
+                                                    <p id="labelAlertError" style="color:white;"> </p>
                                                 </div>
-                                                <div id="alertSuccess" class="alert alert-success" style=" z-index: 1003;display:none;"> 
-                                                    <p id="labelAlertSuccess" style=" margin-left: 30%;"></p>
+                                                <div id="alertSuccess" class="alert alert-success" style=" z-index: 1003;margin-left: 25%;display:none;"> 
+                                                    <p id="labelAlertSuccess" style=" color:white;"> </p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -230,32 +230,7 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Tipo de Usuario</th>
-                                            <th>Estado</th>
-                                            <th>Nombre</th>
-                                            <th>Usuario</th>
-                                            <th>Contraseña</th>
-                                            <th>Imagen</th>
-                                            <th>Acción</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Funcionario</td>
-                                            <td>Activo</td>
-                                            <td>User</td>
-                                            <td>2</td>
-                                            <td>123</td>
-                                            <td><img src="media/images/user.png" alt=""></td>
-                                            <td><button class="btn btn-sm btn-dark" data-toggle="modal" data-target="#myModal" contenteditable="false"><i class="fa fa-edit"></i> Editar</button></td>
-                                        </tr>
-
-                                    </tbody>
+                                <table class="table" id="usuariosTable">
                                 </table>
                             </div>
                         </div>
@@ -264,8 +239,6 @@
                     <!--<button class="btn btn-upload btn-dark " style=" margin-left: 20px;"><i class="fa fa-plus"></i> Agregar Usuario</button>-->
 
                 </div>
-
-
 
                 <!-- /page content -->
 
@@ -306,8 +279,8 @@
         <script src="js/objects/Contenedor.js"></script>
         <script src="js/Utils.js"></script>
         <script src="js/BaseDatos.js"></script>
+        <script src="js/Table.js"></script>
         <script src="js/Proxy.js"></script>
-        <script src="js/generator.js"></script>
         <script src="js/GestionarUsuarios.js"></script>
     </body>
 </html>

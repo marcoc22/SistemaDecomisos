@@ -91,6 +91,28 @@ Proxy.listadoPolicias = function () {
         }
     });
 };
+Proxy.listadoUsuarios = function () {
+
+    $.ajax({
+        url: "/SistemaDecomisos/Servlet?action=listadoUsuarios",
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/x-www-form-urlencoded",
+        success: function (data) {
+            usuarios = new Contenedor();
+            usuarios.items = data;
+            usuariosTable = document.getElementById("usuariosTable");
+            store(usuariosTable.modelId, usuarios);
+            //Table.refresh(empleadosTable);
+            body = usuariosTable.tBodies[0];
+            model = retrieve(usuariosTable.modelId);
+            rows = Table.toRows(model, usuariosTable.toCell);
+
+            for (i = 0; i < rows.length; i++)
+                body.appendChild(rows[i]);
+        }
+    });
+};
 Proxy.guardarUsuario = function (criterio) {
 
     $.ajax({
@@ -100,10 +122,6 @@ Proxy.guardarUsuario = function (criterio) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         success: function (data) {
-
-
-
-
             switch (res) {
                 case 0:
                     mensaje = "Error al actualizar visitante";
@@ -128,7 +146,6 @@ Proxy.guardarUsuario = function (criterio) {
             divSuccess.style.display = "none";
             if (data != null) {
                 var res = Number(data);
-
                 switch (res) {
                     case 0:
                         mensaje = "Error en conexion al guardar.";
@@ -160,3 +177,4 @@ Proxy.guardarUsuario = function (criterio) {
         }
     });
 };
+
