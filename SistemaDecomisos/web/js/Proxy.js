@@ -103,13 +103,7 @@ Proxy.listadoUsuarios = function () {
             usuarios.items = data;
             usuariosTable = document.getElementById("usuariosTable");
             store(usuariosTable.modelId, usuarios);
-            //Table.refresh(empleadosTable);
-            body = usuariosTable.tBodies[0];
-            model = retrieve(usuariosTable.modelId);
-            rows = Table.toRows(model, usuariosTable.toCell);
-
-            for (i = 0; i < rows.length; i++)
-                body.appendChild(rows[i]);
+            Table.refresh(usuariosTable, "");
         }
     });
 };

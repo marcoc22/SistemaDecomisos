@@ -166,17 +166,34 @@ function usuariosTable_toCell(obj, colIdx) {
             content = document.createTextNode(privilegio);
             return content;
         case 6:
-            var button = document.createElement("button");
-            button.className = "btn btn-sm btn-dark";
-            var i = "< i class = 'fa fa-edit' > < /i> Editar";
-            button.innerHTML = i;
-            content = document.createTextNode(button);
+            var button = document.createElement("input");
+            button.type = "button";
+            button.value = "Editar";
+            button.addEventListener("click", function (e) {
+                editarUsuario(e.target)
+            });
+            content = button;
             return content;
     }
     ;
     return null;
 }
+function editarUsuario(i) {
 
+    /*var tabla = i.parentNode.parentNode.parentNode.parentNode;
+    var fila = 0;
+    fila = Number(i.rowIdx);
+    tbody = tabla.childNodes[1];
+    row = tbody.childNodes[fila];
+    var codigo = row.childNodes[0].innerHTML;
+    var nombre = row.childNodes[1].innerHTML;
+    var descripcion = row.childNodes[2].innerHTML;
+    document.getElementById("codigoDepartamento").value = codigo;
+    document.getElementById("nombreDepartamento").value = nombre;
+    document.getElementById("descripcionDepartamento").value = descripcion;*/
+    showPopUp('block', 'edit');
+
+}
 function listadoUsuarios(){
     Proxy.listadoUsuarios();
 }

@@ -12,8 +12,8 @@ Table.refresh = function (table) {
 
 Table.toRows = function (objs, toCell) {
     rows = new Array();
-    for (i = 0; i < objs.this.items.length; i++) {
-            obj = objs.get(i);
+    for (i = 0; i < objs.items.length; i++) {
+            obj = objs.items[i];
             row = Table.toRow(obj, toCell, i);
             rows.push(row);
     }
