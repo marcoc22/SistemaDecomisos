@@ -60,6 +60,7 @@ public class Servlet extends HttpServlet {
             Usuario usuario;
             List<Funcionario> funcionarios;
             List<Policia> policias;
+            List<Usuario> usuarios;
             switch (accion) {
                 case "userLogin":
                     if (model == null) {
@@ -95,6 +96,11 @@ public class Servlet extends HttpServlet {
                 case "listadoPolicias":
                     policias = model.listadoPolicias();
                     json = gson.toJson(policias);
+                    out.write(json);
+                    break;
+                case "listadoUsuarios":
+                    usuarios = model.listadoUsuarios();
+                    json = gson.toJson(usuarios);
                     out.write(json);
                     break;
                 case "guardarUsuario":
