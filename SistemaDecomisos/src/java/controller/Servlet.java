@@ -103,7 +103,6 @@ public class Servlet extends HttpServlet {
                     res = model.guardarUsuario(usuario);
                     out.write(res.toString());// Se envía el objeto Usuario como json al cliente
                     break;
-
             }
         } catch (Exception e) {
             System.out.println(e);

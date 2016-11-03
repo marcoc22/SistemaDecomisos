@@ -14,7 +14,7 @@ $(document).ready(function () {
 function login() {
     var nick = $("#UserName").val();
     var pass = $("#PassWord").val();
-    var usuario = new Usuario(nick, pass);
+    var usuario = new Usuario(0,nick, pass,0,0);
     Proxy.userLogin(JSON.stringify(usuario, replacer));
 }
 function errorLogin() {

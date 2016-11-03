@@ -31,6 +31,7 @@
         <!-- Custom Theme Style -->
         <link href="css/custom.min.css" rel="stylesheet">
         <link href="css/forms.css" rel="stylesheet">
+        <link href="css/verificador.css" rel="stylesheet">
         <link rel="shortcut icon" href="media/images/logo2.ico" type="image/x-icon" />
 
 
@@ -105,12 +106,21 @@
 
                                             <div class="ln_solid"></div>
                                             <div class="form-group">
-                                                <div class="col-md-9 col-md-offset-3">
-                                                    <button type="submit" class="btn btn-primary btn-sm" id="agregar_usuario" onclick="guardarUsuario();"><i class="fa fa-save" ></i> Agregar Usuario </button>
-                                                    <button type="reset" class="btn btn-danger btn-sm" id="cancelar_agregar_usuario" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
+                                                <div id="alertError" class="alert alert-danger" style=" z-index: 1003; display:none;">
+                                                    <p id="labelAlertError" style=" margin-left: 30%;"></p>
+                                                </div>
+                                                <div id="alertSuccess" class="alert alert-success" style=" z-index: 1003;display:none;"> 
+                                                    <p id="labelAlertSuccess" style=" margin-left: 30%;"></p>
                                                 </div>
                                             </div>
-                                            
+                                            <div class="form-group">
+                                                <div class="col-md-9 col-md-offset-3">
+                                                    <button type="submit" class="btn btn-primary btn-sm" id="agregar_usuario" onclick="validarCampos();"><i class="fa fa-save" ></i> Agregar Usuario </button>
+                                                    <button type="reset" class="btn btn-danger btn-sm" id="cancelar_agregar_usuario" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
+                                                </div>
+
+                                            </div>
+
                                             <!--</form>-->
 
                                         </div>
