@@ -116,23 +116,7 @@ Proxy.guardarUsuario = function (criterio) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         success: function (data) {
-            switch (res) {
-                case 0:
-                    mensaje = "Error al actualizar visitante";
-                    document.getElementById("labelAlertError").innerHTML = mensaje;
-                    divError.style.display = "inline-table";
-                    $("#alertError").delay(3000).hide(600);
-                    break;
-                case 1:
-
-                    break;
-                case 2:
-                    mensaje = "Error al actualizar, visitante no existe";
-                    document.getElementById("labelAlertError").innerHTML = mensaje;
-                    divError.style.display = "inline-table";
-                    $("#alertError").delay(3000).hide(600);
-                    break;
-            }
+            
             var mensaje = "";
             var divError = document.getElementById("alertError");
             var divSuccess = document.getElementById("alertSuccess");
@@ -160,6 +144,7 @@ Proxy.guardarUsuario = function (criterio) {
                         $("#alertSuccess").show();
                         $("#alertSuccess").delay(3000).hide(600);
                         clearForm();
+                        listadoUsuarios();
                         break;
                 }
             } else {

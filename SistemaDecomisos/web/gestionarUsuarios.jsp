@@ -58,13 +58,14 @@
                                         <div class="form-horizontal">
                                             <!--<form id="form_agregar_usuario" role="form" class="form-horizontal">-->
                                             <div class="form-group">
+                                                <input type="hidden" id="idUsuario" value="0">
                                                 <label for="tipoUsuario">Tipo de Usuario</label>
                                                 <div>
                                                     <label class="radio-inline">
                                                         <input id="funcionarioRadio" type="radio" name="tipoUsuario" value="funcionario" checked onchange="cargarListado();">Funcionario 
                                                     </label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="tipoUsuario" value="policia" onchange="cargarListado();">Policía Municipal 
+                                                        <input id="policiaRadio" type="radio" name="tipoUsuario" value="policia" onchange="cargarListado();">Policía Municipal 
                                                     </label>
                                                 </div>
                                             </div>

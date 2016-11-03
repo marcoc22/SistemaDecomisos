@@ -2,9 +2,12 @@ $(document).ready(function () {
     pageLoad();
 });
 function showPopUp(action) {
+    
     cargarListado();
     $("#modalAgregarUsuario").modal('show');
-    ;
+    if(action == "editar"){
+        
+    }
 }
 function cargarListado() {
     if (document.getElementById("funcionarioRadio").checked) {
@@ -151,7 +154,11 @@ function usuariosTable_toCell(obj, colIdx) {
             content = document.createTextNode("Funcionario");
             return content;
         case 2:
-            content = document.createTextNode(obj.estado);
+            var estado="Inactivo";
+            if(obj.estado==1){
+                estado="Activo";
+            }
+            content = document.createTextNode(estado);
             return content;
         case 3:
             content = document.createTextNode(obj.contrasena);
@@ -170,7 +177,7 @@ function usuariosTable_toCell(obj, colIdx) {
             button.type = "button";
             button.value = "Editar";
             button.addEventListener("click", function (e) {
-                editarUsuario(e.target)
+                editarUsuario(e.target);
             });
             content = button;
             return content;
@@ -180,15 +187,39 @@ function usuariosTable_toCell(obj, colIdx) {
 }
 function editarUsuario(i) {
 
-    /*var tabla = i.parentNode.parentNode.parentNode.parentNode;
+    var tabla = i.parentNode.parentNode.parentNode.parentNode;
     var fila = 0;
     fila = Number(i.rowIdx);
-    tbody = tabla.childNodes[1];
+    tbody = tabla.childNodes[2];
     row = tbody.childNodes[fila];
+    
     var codigo = row.childNodes[0].innerHTML;
-    var nombre = row.childNodes[1].innerHTML;
-    var descripcion = row.childNodes[2].innerHTML;
-    document.getElementById("codigoDepartamento").value = codigo;
+    var tipoUsuario = row.childNodes[1].innerHTML;
+    var estado = row.childNodes[2].innerHTML;
+    var nombre=row.childNodes[3].innerHTML;
+    var nick=row.childNodes[4].innerHTML;
+    var administrador=row.childNodes[5].innerHTML;
+    
+  $("#idUsuario").val(codigo);
+  if(tipoUsuario=="Funcionario"){
+      document.getElementById("funcionarioRadio").checked=true;
+  }else{
+      document.getElementById("policiaRadio").checked=true;
+  }
+  if(estado=="activo"){
+      document.getElementById("activo").checked=true;
+  }else{
+      document.getElementById("inactivo").checked=true;
+  }
+  
+  $("#nuevo_usuario").val(nick);
+  if(administrador=="Si"){
+      document.getElementById("esAdmin").checked=true;
+  }else{
+      document.getElementById("esAdmin").checked=false;
+  }
+  
+   /*document.getElementById("codigoDepartamento").value = codigo;
     document.getElementById("nombreDepartamento").value = nombre;
     document.getElementById("descripcionDepartamento").value = descripcion;*/
     showPopUp('block', 'edit');
